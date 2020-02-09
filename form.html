@@ -1,0 +1,42 @@
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}} image</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="{{image.title}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" name="author" id="author" value="{{image.author}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="publishedDate">Date Published</label>
+    <input type="text" name="publishedDate" id="publishedDate" value="{{image.publishedDate}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="form-control">{{image.description}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image" class="form-control"/>
+  </div>
+  <div class="form-group hidden">
+    <label for="imageUrl">Image URL</label>
+    <input type="text" name="imageUrl" id="imageUrl" value="{{image.imageUrl}}" class="form-control"/>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
+{# [END form] #}
